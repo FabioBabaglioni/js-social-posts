@@ -1,3 +1,9 @@
+// Milestone 1 -
+// Creiamo il nostro array di oggetti che rappresentano ciascun post. Ogni post dovrà avere le informazioni necessarie per stampare la relativa card: - id del post, numero progressivo da 1 a n - nome autore, - foto autore, - data in formato americano (mm-gg-yyyy), - testo del post, - immagine (non tutti i post devono avere una immagine), - numero di likes. Non è necessario creare date casualiPer le immagini va bene utilizzare qualsiasi servizio di placeholder ad es. Unsplash (https://unsplash.it/300/300?image=<id>)
+
+
+
+// 
 const posts = [
     {
         "id": 1,
@@ -55,3 +61,37 @@ const posts = [
         "created": "2021-03-05"
     }
 ];
+
+
+// Milestone 2 -
+// Prendendo come riferimento il layout di esempio presente nell’html, stampiamo i post del nostro feed.
+
+
+posts.forEach(utente => {
+
+    let post = document.querySelector(".post")
+
+post.innerHTML = `<div class="post__header">
+<div class="post-meta">                    
+    <div class="post-meta__icon">
+        <img class="profile-pic" src="${utente.author.image}" alt="">                    
+    </div>
+    <div class="post-meta__data">
+        <div class="post-meta__author">${utente.author.name}</div>
+        <div class="post-meta__time">${utente.created}</div>
+    </div>                    
+</div>
+</div>
+<div class="post__text">${utente.content}</div>
+<div class="post__image">
+    <img src="${utente.media}" alt="">
+</div>`
+
+
+});
+
+
+
+// Milestone 3 -
+// Se clicchiamo sul tasto “Mi Piace” cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
+// Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
