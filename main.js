@@ -65,7 +65,7 @@ const posts = [
 // Prendendo come riferimento il layout di esempio presente nell’html, stampiamo i post del nostro feed.
 
 
-posts.forEach(utente => {
+posts.forEach((utente, index) => {
 
     let post = document.getElementById("container")
 
@@ -100,29 +100,31 @@ posts.forEach(utente => {
                     </div> 
                 </div>  
     </div>`
-    
 
-    let btnLike = document.querySelector(".js-like-button")
-    let count = 0;
-
-    btnLike.addEventListener("click",
-
-    function(){
-        btnLike.classList.toggle("like-button--liked")
-        count += 1 
-        utente.likes 
-        
-    }
-
-    
-);
-
+    console.log(index)
 });
 
 
 // Milestone 3 -
 // Se clicchiamo sul tasto “Mi Piace” cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
+let btnLike = document.querySelectorAll(".js-like-button")
+let count = 0 
 
+btnLike.forEach((element, index) => {
 
+    btnLike[index].addEventListener("click",
+
+    function(){
+            btnLike[index].classList.add("like-button--liked")
+            count += 1
+            console.log(count)
+    });
+});
+    
+// quando clicco sul botton click 
+
+// incremento il counter dei like dal numero attuale a quello successivo e se riclicco decremento 
+    
+    
 
 // Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
