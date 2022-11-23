@@ -1,9 +1,7 @@
 // Milestone 1 -
 // Creiamo il nostro array di oggetti che rappresentano ciascun post. Ogni post dovrà avere le informazioni necessarie per stampare la relativa card: - id del post, numero progressivo da 1 a n - nome autore, - foto autore, - data in formato americano (mm-gg-yyyy), - testo del post, - immagine (non tutti i post devono avere una immagine), - numero di likes. Non è necessario creare date casualiPer le immagini va bene utilizzare qualsiasi servizio di placeholder ad es. Unsplash (https://unsplash.it/300/300?image=<id>)
-
-
-
 // 
+
 const posts = [
     {
         "id": 1,
@@ -97,17 +95,34 @@ posts.forEach(utente => {
                             </a>
                         </div>
                         <div class="likes__counter">
-                            Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone
+                            Piace a <b id="like-counter-1" class="js-likes-counter">${utente.likes}</b> persone
                         </div>
                     </div> 
                 </div>  
     </div>`
     
 
-});
+    let btnLike = document.querySelector(".js-like-button")
+    let count = 0;
 
+    btnLike.addEventListener("click",
+
+    function(){
+        btnLike.classList.toggle("like-button--liked")
+        count += 1 
+        utente.likes 
+        
+    }
+
+    
+);
+
+});
 
 
 // Milestone 3 -
 // Se clicchiamo sul tasto “Mi Piace” cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
+
+
+
 // Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
