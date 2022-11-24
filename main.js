@@ -67,8 +67,10 @@ const posts = [
 
 posts.forEach((utente, index) => {
 
+    // richiamo il container dei post
     let post = document.getElementById("container")
 
+    // creo il contenuto dei post con un innerHTML
     post.innerHTML += `
     <div class="post">
         <div class="post__header">
@@ -101,26 +103,39 @@ posts.forEach((utente, index) => {
                 </div>  
     </div>`
 
+    // controllo che mi stampi i post giusti in console
     console.log(index)
 });
 
 
 // Milestone 3 -
 // Se clicchiamo sul tasto “Mi Piace” cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
+
+// setto la variabile numero a 0, per poi andare ad inserire il like 
 let numero = 0;
+
+// vado a richiamarmi il la classe del pulsante like e come risultato mi rimanda un [array]
 let btnLike = document.querySelectorAll(".js-like-button")
 
+// ciclo sul array creato dal querySelectorAll
 btnLike.forEach((element, index) => {
 
+    // richiamo il click sul bottone mi piace
     btnLike[index].addEventListener("click",
 
     function(){
+
+            // aggiungo la classe per colorare il pulsante mi piace
             btnLike[index].classList.toggle("like-button--liked")
 
+            // richiamo il numero base di like del post
             let likes = posts[index].likes;
             console.log (likes);
 
+            // creo il like
             let id = index + 1
+
+            // cambio il like base a quello aumentato di uno
             let counter = document.getElementById("like-counter-" +id);
 
             
